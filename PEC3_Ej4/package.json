@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "build": "webpack",
+    "build": "webpack && cp index.html dist/index-html",
     "dev": "webpack serve"
   },
   "devDependencies": {
