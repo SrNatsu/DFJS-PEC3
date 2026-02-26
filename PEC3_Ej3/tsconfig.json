@@ -1,12 +1,20 @@
 {
+  // Permite configurar TypeScript y cómo debe funcionar
   "compilerOptions": {
     /* Basic Options */
+    // Indica la versión ECMAScript a utilizar
     "target": "es2015", 
+    // Indica el módulo de sistema a utilizar
     "module": "commonjs", 
+    // Indica el directorio de salida
     "outDir": "./dist",   
+    // Indica el directorio raíz
     "rootDir": "./src", 
+    // Activa el modo strict, esto hace que la comprobación del tipado sea más robusta
     "strict": true,
+    // Almacena información sobre el grafo del proyecto desde la última compilación
     "incremental": true,
+    // Fichero donde se almacenará la compilación incremental
     "tsBuildInfoFile": "./buildcache",
   }
 }
