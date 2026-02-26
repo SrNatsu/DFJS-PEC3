@@ -1,13 +1,12 @@
-/**
- * @class Controller
- *
- * Links the user input and the view output.
- *
- * @param model
- * @param view
- */
-class TodoController {
-  constructor(service, view) {
+import { TodoService } from "../services/todo.service";
+import { TodoView } from "../views/todo.views";
+import { Todo } from "../models/todo.model";
+
+export class TodoController {
+  private service: TodoService;
+  private view: TodoView;
+
+  constructor(service: TodoService, view: TodoView) {
     this.service = service;
     this.view = view;
 
@@ -22,23 +21,23 @@ class TodoController {
     this.onTodoListChanged(this.service.todos);
   }
 
-  onTodoListChanged = todos => {
+  onTodoListChanged = (todos: Todo[]): void => {
     this.view.displayTodos(todos);
   };
 
-  handleAddTodo = todoText => {
+  handleAddTodo = (todoText: string): void => {
     this.service.addTodo(todoText);
   };
 
-  handleEditTodo = (id, todoText) => {
+  handleEditTodo = (id: string, todoText: string): void => {
     this.service.editTodo(id, todoText);
   };
 
-  handleDeleteTodo = id => {
+  handleDeleteTodo = (id: string): void => {
     this.service.deleteTodo(id);
   };
 
-  handleToggleTodo = id => {
+  handleToggleTodo = (id: string): void => {
     this.service.toggleTodo(id);
   };
 }
